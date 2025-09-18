@@ -12,11 +12,34 @@
 	</body>
 </html>
 
-<style>
+<style is:global>
+	@font-face {
+		font-family: 'Cocogoose Light';
+		src: url('/fonts/cocogoose.ttf');
+	}
+	@font-face {
+		font-family: 'Helvetica Regular';
+		src: url('/fonts/helvetica.ttf');
+	}
+	:root {
+		--gray: #606060;
+		--red: #FF0138;
+		--light-blue: #061D41;
+		--dark-blue: #041327;
+		--cocogoose-light: 'Cocogoose Light';
+		--helvetica-regular: 'Helvetica Regular';
+	}
+	 *, *::before, *::after {
+			box-sizing: border-box;
+			text-decoration: none;
+		}
 	html,
 	body {
 		margin: 0;
+		padding: 0;
 		width: 100%;
 		height: 100%;
+		font-size: 62.5%; /* 1rem = 10px */
+		scroll-behavior: smooth;
 	}
 </style>

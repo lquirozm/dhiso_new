@@ -1,0 +1,97 @@
+---
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import casaAbuila1 from '../assets/proyectos/1.CASA_ABULIA/img1.jpg';
+import casaAbuila2 from '../assets/proyectos/1.CASA_ABULIA/img2.jpg';   
+import casaAbuila3 from '../assets/proyectos/1.CASA_ABULIA/img3.jpg';
+---
+<section class="gallery">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src={casaAbuila1.src} alt="Proyecto 1"/></div>
+            <div class="swiper-slide"><img src={casaAbuila2.src} alt="Proyecto 2"/></div>
+            <div class="swiper-slide"><img src={casaAbuila3.src} alt="Proyecto 3"/></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+<style>
+    .gallery {
+        width: 100%;    
+        
+    }
+    .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    .swiper {
+        width: 90%;
+        padding-top: 10px;
+        padding-bottom: 40px;
+        margin: 0 auto;
+    }
+    .swiper-slide {
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: var(--red);
+    }
+    .swiper-pagination-bullet {
+        background: white;
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+        background: var(--red);
+    }
+    @media only screen and (min-width: 768px) {
+        .swiper {
+            width: 100%;
+        }
+    }
+    @media only screen and (min-width: 1200px) {
+        .swiper {
+            width: 100%;
+            height: 600px;
+        }
+    }
+</style>
+<script>
+    import Swiper from 'swiper';
+    import { Navigation, Pagination } from 'swiper/modules';
+    new Swiper('.mySwiper', {
+        modules: [Navigation, Pagination],
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 1,
+            },
+        },
+    });
